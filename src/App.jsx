@@ -3,15 +3,13 @@
 // import viteLogo from '/vite.svg'
 import './index.css'
 // import { Button } from "/components/ui/button"
+import { Outlet } from 'react-router-dom'
 
 function App() {
   return ( 
-
-    <div>
-      <h1>hello</h1>
-      {/* <Button>Click me</Button> */}
-    </div>
-
+<>
+    <Outlet />
+</>
   )
 }
 
