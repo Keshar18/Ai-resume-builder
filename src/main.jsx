@@ -9,17 +9,18 @@ import SignInPage from './auth/sign-in/index.jsx'
 const router=createBrowserRouter([
   {
     path:'/',
-    element:<App/>
+    element:<App />
   },
   {
+
     path:'/auth/sign-in',
-    element:<SignInPage/>,
+    element:<SignInPage />,
   }
 ])
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <RouterProvider router={router}/>
-  </React.StrictMode>,
+  
+    <RouterProvider router={router} />
+ 
 )
