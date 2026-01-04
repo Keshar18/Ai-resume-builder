@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+// import { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
 // import './index.css'
 import App from './App.jsx'
@@ -6,15 +6,21 @@ import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import SignInPage from './auth/sign-in/index.jsx'
 import Home from './home/index.jsx'
 import Dashboard from './dashboard/index.jsx'
+import { ClerkProvider } from '@clerk/clerk-react'
+
+ const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
+
 
 const router=createBrowserRouter([
   {
     // path:'/',
     element:<App />,
-    children:[{
+    children:[
+      {
       path:'/',
-      element:<Home/>
-    }]
+      element:<Home />
+    }
+  ]
   },
   // {
 
@@ -30,7 +36,7 @@ const router=createBrowserRouter([
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  
-    <RouterProvider router={router} />
- 
+  <RouterProvider router={router} />
 )
+
+
