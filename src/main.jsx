@@ -32,6 +32,10 @@ const router=createBrowserRouter([
     path:'/dashboard',
     element:<Dashboard />
   },
+   {
+    path: '/auth/sign-in',      //  MUST EXIST
+    element: <SignInPage />
+  },
 ])
 
 

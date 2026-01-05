@@ -1,15 +1,22 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-import './index.css'
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import { useUser } from '@clerk/clerk-react'
+import './App.css'
 // import { Button } from "/components/ui/button"
-import { Outlet } from 'react-router-dom'
+import { Navigate, Outlet } from 'react-router-dom'
 
 function App() {
-  return ( 
-<>
+  // const [count, setCount]= useState(0)
+  const {User, isLoaded, isSignedIn} = useUser();
+
+  if(!isSignedIn){
+    return <Navigate to ={"/auth/sign-in"}/>
+  }
+
+  return  ( 
     <Outlet />
-</>
+
   )
 }
 
